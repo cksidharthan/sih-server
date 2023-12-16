@@ -9,8 +9,9 @@ import (
 )
 
 type Config struct {
-	Port     string `env:"PORT" envDefault:"9090"`
-	LogLevel string `env:"LOG_LEVEL" envDefault:"debug"`
+	Port         string `env:"PORT" envDefault:"9090"`
+	LogLevel     string `env:"LOG_LEVEL" envDefault:"debug"`
+	UploadFolder string `env:"UPLOAD_FOLDER" envDefault:"uploadFolder"`
 }
 
 func New() (*Config, error) {

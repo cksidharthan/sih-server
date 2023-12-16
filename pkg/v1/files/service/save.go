@@ -1,6 +1,7 @@
 package service
 
 import (
+	"context"
 	"io"
 	"mime/multipart"
 	"os"
@@ -8,7 +9,7 @@ import (
 )
 
 // SaveFile saves the uploaded file to the destination as per the filename.
-func SaveFile(file *multipart.FileHeader, fileName string) error {
+func SaveFile(ctx context.Context, file *multipart.FileHeader, fileName string) error {
 	src, err := file.Open()
 	if err != nil {
 		return err
@@ -21,6 +22,7 @@ func SaveFile(file *multipart.FileHeader, fileName string) error {
 
 	out, err := os.Create(fileName)
 	if err != nil {
+
 		return err
 	}
 	defer out.Close()

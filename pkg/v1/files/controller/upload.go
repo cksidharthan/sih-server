@@ -2,11 +2,12 @@ package controller
 
 import (
 	"fmt"
-	"github.com/cksidharthan/sih-server/pkg/v1/upload/service"
+	"github.com/cksidharthan/sih-server/pkg/v1/files/service"
 	"github.com/gin-gonic/gin"
 )
 
-func UploadFile(service *service.UploadService) gin.HandlerFunc {
+// UploadFile is a gin handler function that uploads a file to the server
+func UploadFile(service *service.FilesService) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// get the file from the request
 		file, err := c.FormFile("file")
@@ -18,7 +19,7 @@ func UploadFile(service *service.UploadService) gin.HandlerFunc {
 		}
 
 		// save the file to disk
-		err = service.Upload(file)
+		err = service.Upload(c, file)
 		if err != nil {
 			c.JSON(500, gin.H{
 				"message": "error saving file",
