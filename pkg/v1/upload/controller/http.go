@@ -10,10 +10,10 @@ type UploadHandler struct {
 	fx.In
 
 	RoutesV1 *gin.RouterGroup `name:"v1"`
-	Service  service.UploadService
+	Service  *service.UploadService
 }
 
 func New(u UploadHandler) {
-	router := u.RoutesV1.Group("/download")
+	router := u.RoutesV1.Group("/upload")
 	router.POST("", UploadFile(u.Service))
 }

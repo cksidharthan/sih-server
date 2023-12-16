@@ -5,6 +5,8 @@ import (
 	"github.com/cksidharthan/sih-server/pkg/config"
 	"github.com/cksidharthan/sih-server/pkg/logger"
 	"github.com/cksidharthan/sih-server/pkg/router"
+	uploadCtrl "github.com/cksidharthan/sih-server/pkg/v1/upload/controller"
+	uploadSvc "github.com/cksidharthan/sih-server/pkg/v1/upload/service"
 	"go.uber.org/fx"
 	"net"
 )
@@ -23,9 +25,12 @@ func Start() {
 			logger.New,
 			httpListener,
 			router.New,
+
+			uploadSvc.New,
 		),
 		fx.Invoke(
 			router.DefaultEndpoints,
+			uploadCtrl.New,
 		),
 	)
 
