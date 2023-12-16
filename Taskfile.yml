@@ -8,3 +8,7 @@ tasks:
   build:
     cmds:
       - go build -o bin/main main.go
+
+  build-image:
+    cmds:
+      - docker build -t sih-server -f deploy/Dockerfile .
