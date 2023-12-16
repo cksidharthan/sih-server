@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN go build -o main .
 
-# Run stage
+# Application container stage
 FROM scratch
 WORKDIR /app
 EXPOSE 9090

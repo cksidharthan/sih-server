@@ -1,13 +1,12 @@
 module github.com/cksidharthan/sih-server
 
-go 1.21.4
+go 1.21.5
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/gin-gonic/gin v1.9.1
 	github.com/joho/godotenv v1.5.1
-	github.com/revuplive/trading-bot-connector v0.0.3
 	github.com/sirupsen/logrus v1.9.3
 	go.uber.org/fx v1.20.1
 )
