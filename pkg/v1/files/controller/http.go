@@ -17,5 +17,5 @@ func New(u FileHandler) {
 	router := u.RoutesV1.Group("/files")
 	router.POST("/upload", UploadFile(u.Service))
 	router.GET("/list", ListFiles(u.Service))
-	router.GET("/download/:filename", Download(u.Service))
+	router.GET("/download", Download(u.Service))
 }
