@@ -66,7 +66,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9090/api/v1/files/download?fileName=rest.go",
+					"raw": "http://localhost:9090/api/v1/files/download?uuid=c53f0cee-be48-4528-ba87-a15dff930bf7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,8 +80,8 @@
 					],
 					"query": [
 						{
-							"key": "fileName",
-							"value": "rest.go"
+							"key": "uuid",
+							"value": "c53f0cee-be48-4528-ba87-a15dff930bf7"
 						}
 					]
 				}
